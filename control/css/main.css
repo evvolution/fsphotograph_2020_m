@@ -12,26 +12,52 @@
 body {
     background-color: #fffdde;
     background-size: 100%;
+    overflow-y: auto;
 }
-
 
 .mainpart_m {
     position: absolute;
-    height: 100%;
+    height: 100%;    
+    text-align: center;
 }
 
 .header {
     position: relative;
-    top: 5%;
-    text-align: center;
+    /* top: 5%; */
+    margin-top: 5%;
+    max-height: 15%;
+    min-height: 10%;
 }
 
 .header img {
-    width: 100%;
+    width: 80%;
 }
 
-.footer {
+.title_m {
+    position: relative;
+    /* top: 5%; */
+    margin-top: 2%;
+    max-height: 15%;
+    min-height: 10%;
+}
+
+.title_m img {
+    width: 90%;
+}
+
+.footer_m {
     position: absolute;
-    bottom: 5%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 10vw;
+    background-color: #207329;
     text-align: center;
 }
+
+.footer_m span{
+    line-height: 10vw;
+    color: #fffdde;
+}
+

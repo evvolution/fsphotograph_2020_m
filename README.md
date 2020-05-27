@@ -1,2 +1,0 @@
-# fsphotograph_2020_m
-fsphotograph_2020_m
