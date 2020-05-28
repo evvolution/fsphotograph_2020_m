@@ -19,7 +19,7 @@ function ajax_forpics() {
                 for (var i = 0; i < picnum; i++) {
                     let line1 = '';
                     let line2 = '';
-                    line1 = '<div class="piclist_item"><img src="' + piclistx[0][i].url + '"/>';
+                    line1 = '<div class="piclist_item"><a target="_blank" href="' + piclistx[0][i].url + '"><img src="' + piclistx[0][i].pic_url + '"/></a>';
                     line2 = '<div class="imgtitle">' + piclistx[0][i].title + '</div><div class="imgauthor">' + piclistx[0][i].item_id + '</div></div>';
                     picstr += (line1 + line2);
                 }

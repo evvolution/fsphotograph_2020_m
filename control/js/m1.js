@@ -38,7 +38,7 @@ function allsumbit() {
     var contact_person = document.getElementById("prjcontact").value.length;
     var phone = document.getElementById("prjphone").value.length;
     var identify_id = document.getElementById("prjidentify").value.length;
-    var content_500 = document.getElementById("shortprjmain").value.length;
+    // var content_500 = document.getElementById("shortprjmain").value.length;
     var content = document.getElementById("shortprjverify").value.length;
 
     var fimg = document.getElementById("prjcover"); //获取整体file
@@ -84,10 +84,10 @@ function allsumbit() {
         alert("请填写身份证号");
         return;
     }
-    if (content_500 === 0) {
-        alert("请填写作品概要");
-        return;
-    }
+    // if (content_500 === 0) {
+    //     alert("请填写作品概要");
+    //     return;
+    // }
     if (content === 0) {
         alert("请填写作品简介");
         return;
@@ -115,20 +115,33 @@ function allsumbit() {
         alert("文件大小需在2M-20M");
         return;
     }
-
-
     ajax_postinfo(formall)
 }
 
 function ajax_postinfo(data) {
+
+    $("#progress_m").css("display","block")
     $.ajax({
         type:"post",
-        async: false,
+        async: true,
         processData: false,
         contentType: false,
         url: 'https://server.foshanplus.com/hei_up',
         // url: 'http://172.16.20.17:8000/hei_up',
         data: data,
+        xhr: function() {                        
+            myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){ // check if upload property exists
+                myXhr.upload.addEventListener('progress',function(e){                            
+                    var loaded = e.loaded;                  //已经上传大小情况 
+                    var total = e.total;                      //附件总大小 
+                    var percent = Math.floor(100*loaded/total)+"%";     //已经上传的百分比  
+                    // console.log("已经上传了："+percent);                 
+                    $("#percent").html(percent);                                                     
+                }, false); // for handling the progress of the upload
+            }
+            return myXhr;
+        },
         success:function(receiver){
             // console.log(receiver);
             var success_id = receiver.data.id;
@@ -136,6 +149,9 @@ function ajax_postinfo(data) {
             var strid = success_id.toString();
             // console.log(strid);
             var strid_md5 = strid.MD5().toLocaleUpperCase();
+
+            $("#progress_m").css("display","none")
+
             $("#successcode").val(strid_md5);
             $("#code").css("display","block")
         },
@@ -149,6 +165,14 @@ function ajax_postinfo(data) {
 
 function clipToborad() {
     var target = document.getElementById("successcode");
+    // console.log(target)
+    target.select();
+    document.execCommand("Copy");
+    alert("已复制到剪切板，可粘贴。");
+}
+
+function clipToborad_pclink() {
+    var target = document.getElementById("link_pc");
     // console.log(target)
     target.select();
     document.execCommand("Copy");
