@@ -46,18 +46,18 @@ body {
 }
 
 .footer_m {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     width: 100%;
-    height: 10vw;
+    height: 12vw;
     background-color: #207329;
     text-align: center;
 }
 
 .footer_m span{
-    line-height: 10vw;
+    line-height: 12vw;
     color: #fffdde;
 }
 

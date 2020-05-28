@@ -14,11 +14,15 @@
     <div class="mainpart_m">
         <div class="fade code" id="code">
             <div class="code">
-                <div class="code_title">报名成功!
+                <div class="code_title">
+                    <p>报名成功!</p>
                     <p>请等待作品审核</p>
                 </div>
-                <div class="code_main">
-                    <p id="successcode">AAAAAAAAAAAAAAA</p>
+                <div class="code_main" onclick="clipToborad()">
+                    <input id="successcode" value="AAAAAAAAAAAAAAA" readonly>
+                </div>
+                <div class="code_main_s">
+                    <p><small>点击作品码可复制到剪切板</small></p>
                     <p><small>本参赛作品码仅提示一次</small></p>
                     <p><small>请保存后关闭或刷新本页面</small></p>
                 </div>
@@ -81,11 +85,12 @@
                     <div class="fsplus_label"><span>上传作品:</span></div>
                     <div class="fsplus_sheet_file"><input id="prjcover" name="fimg" type="file" /></div>
                 </div>
-                <div class="fsplus_line">
-                    <div class="fsplus_submit" onclick="allsumbit()"><span>提交报名</span></div>
-                </div>
             </form>
         </div>
+        <div class="fsplus_linex">
+            <div class="fsplus_submit" onclick="allsumbit()"><span>提交报名</span></div>
+        </div><br/><br/>
+
         <div class="footer_m" onclick="m_bak()"><span>返回首页</span></div>
     </div>
     <script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>

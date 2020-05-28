@@ -60,25 +60,25 @@
 }
 
 .m1 {
-    background: url(../../img/m1.png) top center no-repeat;
+    background: url(../../img/n1.png) top center no-repeat;
     background-size: 100%;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .m2 {
-    background: url(../../img/m2.png) top center no-repeat;
+    background: url(../../img/n2.png) top center no-repeat;
     background-size: 100%;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .m3 {
-    background: url(../../img/m3.png) top center no-repeat;
+    background: url(../../img/n3.png) top center no-repeat;
     background-size: 100%;
-    opacity: 0.9;
+    opacity: 1;
 }
 
 .m4 {
-    background: url(../../img/m4.png) top center no-repeat;
+    background: url(../../img/n4.png) top center no-repeat;
     background-size: 100%;
-    opacity: 0.9;
+    opacity: 1;
 }
